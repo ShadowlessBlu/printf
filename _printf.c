@@ -10,20 +10,20 @@
  */
 int _printf(const char *format, ...)
 {
-	int invt = 0;
-	va_list argu;
+	int count = 0;
+	va_list args;
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(argu, format);
+	va_start(args, format);
 
 	if (format && *format)
 	{
-		invt = parse_format(format, argu);
+		count = parse_format(format, args);
 	}
 
-	va_end(argu);
+	va_end(args);
 
-	return (invt);
+	return (count);
 }
